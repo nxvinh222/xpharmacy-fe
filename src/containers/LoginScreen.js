@@ -16,7 +16,7 @@ class LoginScreen extends Component {
     render() {
         return (
             <div>
-               <Login/> 
+               <Login _onLogin={this.props._onLogin}/> 
             </div>
         );
     }
