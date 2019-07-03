@@ -1,13 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import './axios';
+import { BrowserRouter, Route} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <Route exact path="/login"/>
+        </div>
+        
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
