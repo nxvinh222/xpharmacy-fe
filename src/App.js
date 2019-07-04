@@ -44,6 +44,12 @@ class App extends Component {
       </BrowserRouter>
     );
   }
+
+  render() {
+    return (
+      <NavBar />
+    );
+  }
 }
 
 export default App;
