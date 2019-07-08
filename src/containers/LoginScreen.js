@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../axios';
 
 import Login from '../components/Login';
+import NavBar from '../components/NavBar';
 
 class LoginScreen extends Component {
 
@@ -16,6 +17,7 @@ class LoginScreen extends Component {
     render() {
         return (
             <div>
+                <NavBar/>
                <Login _onLogin={this.props._onLogin}/> 
             </div>
         );
