@@ -4,7 +4,8 @@ import './App.css';
 import './axios';
 import { BrowserRouter, Route} from 'react-router-dom';
 
-import LoginScreen from './containers/LoginScreen'
+import LoginScreen from './containers/LoginScreen';
+import NavBar from './components/NavBar';
 import axios from './axios';
 
 class App extends Component {
@@ -44,7 +45,6 @@ class App extends Component {
       </BrowserRouter>
     );
   }
-
 }
 
 export default App;
