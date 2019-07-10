@@ -16,20 +16,18 @@ class App extends Component {
 
   _onLogin = (username, password) => {
     axios
-      .post("/api/v1/login", {
+      .post("/api/v1/auth", {
         username: username,
         password: password
       })
       .then(response => {
-        this.setState({
-          name: response.data.name,
-          id: response.data.id
-        })
-        console.log(response);
-        
+        localStorage.setItem('token', response.data.token)
+        console.log(response);     
       })
   }
   
+
+
   render() {
     return (
       <BrowserRouter>

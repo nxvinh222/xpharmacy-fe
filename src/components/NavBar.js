@@ -7,24 +7,25 @@ class NavBar extends Component {
         return (
             <div className="NavBar">
                 <div className="container">
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <Brand />
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
+                    <nav className="navbar navbar-expand-lg navbar-light" style={{padding: '30px'}}>
+                        <a className="navbar-brand active" href="#" style={{'color': '#15cda8'}, {'fontsize': '2.0rem'}}>xPharmacy.<span class="sr-only">(current)</span></a>
+                        <button className="navbar-toggler" type="button" data-toggle="colapse"l data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                            <span classname="navbar-toggler-icon"></span>
                         </button>
-                        <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav">
-                                <li className="nav-item active">
-                                    <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                            
+                        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                            <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">Products</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Features</a>
+                                    <a className="nav-link" href="#">Create Order</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Pricing</a>
+                                    <a className="nav-link" href="/login">Log in</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link disabled" href="#">Disabled</a>
+                                    <a className="nav-link" href="#">Cart</a>
                                 </li>
                             </ul>
                         </div>
