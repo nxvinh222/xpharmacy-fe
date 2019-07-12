@@ -5,6 +5,7 @@ import './axios';
 import { BrowserRouter, Route} from 'react-router-dom';
 
 import LoginScreen from './containers/LoginScreen';
+import ProductScreen from './containers/ProductScreen';
 import NavBar from './components/NavBar';
 import axios from './axios';
 
@@ -37,8 +38,12 @@ class App extends Component {
           {/* <Route exact path="/" render={(props) => {
             return <HomeScreen {...props} username={this.state.username} _onLogin={this._onLogin} />
           }} /> */}
+          <NavBar/>
           <Route exact path="/login" render={(props) => {
             return <LoginScreen {...props} state={this.state} _onLogin={this._onLogin}/>
+          }} />
+          <Route exact path="/products" render={(props) => {
+            return <ProductScreen {...props} state={this.state} _onLogin={this._onLogin}/>
           }} />
         </div>
         
