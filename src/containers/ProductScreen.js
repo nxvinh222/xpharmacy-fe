@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import NavBar from '../components/NavBar';
 class ProductScreen extends Component {
     render() {
         return (
             <div>
-                
+                <NavBar/>   
                 <div className="site-section">
                     <div className="container">
                         <div className="row mb-5">

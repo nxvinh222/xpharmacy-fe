@@ -6,7 +6,6 @@ import { BrowserRouter, Route} from 'react-router-dom';
 
 import LoginScreen from './containers/LoginScreen';
 import ProductScreen from './containers/ProductScreen';
-import NavBar from './components/NavBar';
 import axios from './axios';
 
 class App extends Component {
@@ -36,7 +35,6 @@ class App extends Component {
           {/* <Route exact path="/" render={(props) => {
             return <HomeScreen {...props} username={this.state.username} _onLogin={this._onLogin} />
           }} /> */}
-          <NavBar/>
           <Route exact path="/login" render={(props) => {
             return <LoginScreen {...props} state={this.state} _onLogin={this._onLogin}/>
           }} />
@@ -44,7 +42,6 @@ class App extends Component {
             return <ProductScreen {...props} state={this.state} _onLogin={this._onLogin}/>
           }} />
         </div>
-        
       </BrowserRouter>
     );
   }
