@@ -6,10 +6,7 @@ import { BrowserRouter, Route} from 'react-router-dom';
 
 import HomeScreen from './containers/HomeScreen';
 import LoginScreen from './containers/LoginScreen';
-<<<<<<< HEAD
 import ProductScreen from './containers/ProductScreen';
-=======
->>>>>>> 27c5661d0c99622959e6841ecb460f01d34ba9ed
 import axios from './axios';
 
 class App extends Component {
