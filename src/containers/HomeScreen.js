@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavBar from '../components/NavBar'
 import Banner from '../components/Banner'
+import Carousel from '../components/Carousel'
 
 class MainScreen extends Component {
     render() {
@@ -10,6 +11,7 @@ class MainScreen extends Component {
             <div>
                 <NavBar/>
                 <Banner/>
+                <Carousel/>
             </div>
         );
     }
