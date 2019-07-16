@@ -12,7 +12,7 @@ import axios from './axios';
 class App extends Component {
 
   state = {
-    username: "test"
+    products: []
   }
 
   _onLogin = (username, password) => {
@@ -27,20 +27,29 @@ class App extends Component {
       })
   }
   
-
+  componentDidMount(){
+    axios
+      .get("/api/v1/products", {
+        headers: { token: localStorage.getItem('token')}
+      })
+      .then(data =>{
+        this.setState({products: data.data})
+        console.log(this.state.products);
+      })
+  }
 
   render() {
     return (
       <BrowserRouter>
         <div className="App">
           <Route exact path="/" render={(props) => {
-            return <HomeScreen {...props} username={this.state.username} _onLogin={this._onLogin} />
+            return <HomeScreen/>
           }} />
           <Route exact path="/login" render={(props) => {
             return <LoginScreen {...props} state={this.state} _onLogin={this._onLogin}/>
           }} />
           <Route exact path="/products" render={(props) => {
-            return <ProductScreen {...props} state={this.state} _onLogin={this._onLogin}/>
+            return <ProductScreen {...props} state={this.state}/>
           }} />
         </div>
       </BrowserRouter>
