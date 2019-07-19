@@ -12,6 +12,7 @@ class product extends Component {
                         <h3><a href="shop-single.html">{this.props.product.name}</a></h3>
                         <p className="mb-0">{this.props.product.info}s</p>
                         <p className="text-primary font-weight-bold">{this.props.product.price}$</p>
+                        <a href="#" class="btn btn-primary">ADD TO CART</a>
                     </div>
                 </div>
             </div>
