@@ -6,7 +6,7 @@ class ProductScreen extends Component {
     render() {
         return (
             <div>
-                <NavBar/>   
+                <NavBar/>  
                 <div className="site-section">
                     <div className="container">
                         <div className="row mb-5">

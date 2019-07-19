@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Product from '../components/Product'
-import product from '../components/Product';
+import Product from '../components/Product';
 
 class ProductField extends Component {
     

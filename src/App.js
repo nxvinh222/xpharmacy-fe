@@ -8,6 +8,8 @@ import HomeScreen from './containers/HomeScreen';
 import LoginScreen from './containers/LoginScreen';
 import ProductScreen from './containers/ProductScreen';
 import axios from './axios';
+import DashBoard from './containers/DashBoard';
+import Cart from './containers/Cart';
 
 class App extends Component {
 
@@ -50,6 +52,12 @@ class App extends Component {
           }} />
           <Route exact path="/products" render={(props) => {
             return <ProductScreen {...props} state={this.state}/>
+          }} />
+          <Route exact path="/dashboard" render={(props) => {
+            return <DashBoard {...props} state={this.state}/>
+          }} />
+          <Route exact path="/cart" render={(props) => {
+            return <Cart {...props} state={this.state}/>
           }} />
         </div>
       </BrowserRouter>
