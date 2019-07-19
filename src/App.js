@@ -45,7 +45,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Route exact path="/" render={(props) => {
-            return <HomeScreen/>
+            return <HomeScreen {...props} state={this.state}/>
           }} />
           <Route exact path="/login" render={(props) => {
             return <LoginScreen {...props} state={this.state} _onLogin={this._onLogin}/>
