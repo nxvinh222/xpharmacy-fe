@@ -10,6 +10,7 @@ import ProductScreen from './containers/ProductScreen';
 import axios from './axios';
 import DashBoard from './containers/DashBoard';
 import Cart from './containers/Cart';
+import Order from './containers/Order';
 
 class App extends Component {
 
@@ -58,6 +59,9 @@ class App extends Component {
           }} />
           <Route exact path="/cart" render={(props) => {
             return <Cart {...props} state={this.state}/>
+          }} />
+          <Route exact path="/order" render={(props) => {
+            return <Order {...props} state={this.state}/>
           }} />
         </div>
       </BrowserRouter>

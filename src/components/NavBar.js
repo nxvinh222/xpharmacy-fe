@@ -12,7 +12,7 @@ class NavBar extends Component {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto mt-2 mt-lg-0">
                         <Nav.Link href="/products">Products</Nav.Link>
-                        <Nav.Link href="#">Create Order</Nav.Link>
+                        <Nav.Link href="/order">Create Order</Nav.Link>
                         <Nav.Link href="/login">Log in</Nav.Link>
                         <Nav.Link href="/cart">Cart</Nav.Link>
                         </Nav>
