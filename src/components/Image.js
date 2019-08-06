@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-const BASE_URL = 'http://localhost:3001/';
 
 class Image extends Component {
 
@@ -16,15 +15,17 @@ class Image extends Component {
     fileUploadHandler = () => {
         const fd = new FormData();
         fd.append('prescriptionUploads',this.state.selectedFile,this.state.selectedFile.name);
-        axios.post(BASE_URL+'api/v1/prescriptionUploads', fd, {
+        axios
+        .post('/api/v1/prescriptionUploads', fd, {
             onUploadProgress: ProgressEvent => {
-                console.log('Upload Progress: ' + Math.round(ProgressEvent.loaded / ProgressEvent.total * 100) + '%');
+                    console.log('Upload Progress: ' + Math.round(ProgressEvent.loaded / ProgressEvent.total * 100) + '%');
             }
         })
-            .then(res => {
-                console.log(res);
-            });
+        .then(res => {
+            console.log(res);
+    })
     }
+    
 
     render() {
         return (

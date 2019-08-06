@@ -11,6 +11,7 @@ import axios from './axios';
 import DashBoard from './containers/DashBoard';
 import Cart from './containers/Cart';
 import Order from './containers/Order';
+import SignUpScreen from './containers/SignUpScreen';
 
 class App extends Component {
 
@@ -50,6 +51,9 @@ class App extends Component {
           }} />
           <Route exact path="/login" render={(props) => {
             return <LoginScreen {...props} state={this.state} _onLogin={this._onLogin}/>
+          }} />
+          <Route exact path="/signup" render={(props) => {
+            return <SignUpScreen {...props} state={this.state} _onLogin={this._onLogin}/>
           }} />
           <Route exact path="/products" render={(props) => {
             return <ProductScreen {...props} state={this.state}/>

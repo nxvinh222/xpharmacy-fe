@@ -14,6 +14,7 @@ class NavBar extends Component {
                         <Nav.Link href="/products">Products</Nav.Link>
                         <Nav.Link href="/order">Create Order</Nav.Link>
                         <Nav.Link href="/login">Log in</Nav.Link>
+                        <Nav.Link href="/signup">Sign Up</Nav.Link>
                         <Nav.Link href="/cart">Cart</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
