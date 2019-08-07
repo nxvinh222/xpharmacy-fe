@@ -33,6 +33,7 @@ class NavBar extends Component {
                         <Nav className="ml-auto mt-2 mt-lg-0">
                         <Nav.Link href="/products">Products</Nav.Link>
                         <Nav.Link href="/order">Create Order</Nav.Link>
+                        <Nav.Link href="/signup">Sign Up</Nav.Link>
                         {test}
                         <Nav.Link href="/cart">Cart</Nav.Link>
                         </Nav>

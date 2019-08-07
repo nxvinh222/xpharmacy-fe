@@ -16,14 +16,15 @@ class Image extends Component {
         const fd = new FormData();
         fd.append('prescriptionUploads',this.state.selectedFile,this.state.selectedFile.name);
         axios
-        .post('/api/v1/prescriptionUploads', fd, {
+        .post('http://localhost:3000/api/v1/prescriptionUploads', fd, {
             onUploadProgress: ProgressEvent => {
                     console.log('Upload Progress: ' + Math.round(ProgressEvent.loaded / ProgressEvent.total * 100) + '%');
             }
         })
         .then(res => {
             console.log(res);
-    })
+        })
+        .catch(err => console.log(err));
     }
     
 

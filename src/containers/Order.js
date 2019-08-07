@@ -10,11 +10,11 @@ class Order extends Component {
                 <NavBar/>
                 <div className="container">
                     <h1>Create your order</h1>
-                    <Pagination>
+                    {/* <Pagination>
                         <Pagination.Item active>{1}</Pagination.Item>
                         <Pagination.Item>{2}</Pagination.Item>
                         <Pagination.Item>{3}</Pagination.Item>
-                    </Pagination>
+                    </Pagination> */}
                     <h5>1.Send us your prescriptions</h5>
                     <Image/>
                 </div>
