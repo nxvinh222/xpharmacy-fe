@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Image extends Component {
+class PrescriptionImage extends Component {
 
     state = {
         selectedFile: null
@@ -16,7 +16,7 @@ class Image extends Component {
         const fd = new FormData();
         fd.append('prescriptionUploads',this.state.selectedFile,this.state.selectedFile.name);
         axios
-        .post('http://localhost:3000/api/v1/prescriptionUploads', fd, {
+        .post('/api/v1/prescriptionUploads', fd, {
             onUploadProgress: ProgressEvent => {
                     console.log('Upload Progress: ' + Math.round(ProgressEvent.loaded / ProgressEvent.total * 100) + '%');
             }
@@ -38,4 +38,4 @@ class Image extends Component {
     }
 }
 
-export default Image;
+export default PrescriptionImage;

@@ -1,6 +1,42 @@
 import React, { Component } from 'react';
 import Navbar from '../components/NavBar';
+import axios from '../axios';
+import { Collapse } from 'react-bootstrap';
 class Cart extends Component {
+
+    state = {
+        name: '',
+        address: '',
+        phone: '',
+        email: '',
+        note: ''
+    }
+
+    handleChange = (event) => {
+        let name = event.target.name;
+        let value = event.target.value;
+
+        this.setState({
+            [name]: value
+        })
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state);
+        axios
+        .post("/api/v1/orders",{
+            name: this.state.name,
+            address: this.state.address,
+            phone: this.state.phone,
+            email: this.state.email,
+            date: new Date().toLocaleString()
+        })
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
+        
+    }
+
     render() {
         return (
             <div>
@@ -21,51 +57,38 @@ class Cart extends Component {
                     </div>
                     <hr/>
                     <h1 className="font-weight-bold">DELIVERY</h1>
-                    <form>
-                        <div className="col-6 text-left font-weight-bold">
-                            <div className="form-group row">
-                                <div className="col-4">
-                                    Full Name
-                                </div>
-                                <div className="col-8">
-                                    <input type="text" class="form-control" id="name" />
-                                </div>
+                    <div className="FormCenter">
+                        <form onSubmit={this.handleSubmit} className="FormFields">
+                            <div className="FormField">
+                                <label className="FormField__Label" htmlFor="name">Full name</label>
+                                <input type="text" id="name" className="FormField__Input" placeholder="Enter your name" name="name" value={this.state.name} onChange={this.handleChange} />
                             </div>
-                            <div className="form-group row">
-                                <div className="col-4">
-                                    Address
-                                </div>
-                                <div className="col-8">
-                                    <input type="text" class="form-control" id="address"/>
-                                </div>
+
+                            <div className="FormField">
+                                <label className="FormField__Label" htmlFor="address">Address</label>
+                                <input type="text" id="address" className="FormField__Input" placeholder="Enter your address" name="address" value={this.state.address} onChange={this.handleChange} />
                             </div>
-                            <div className="form-group row">
-                                <div className="col-4">
-                                    Phone number
-                                </div>
-                                <div className="col-8">
-                                    <input type="text" class="form-control" id="phone" />
-                                </div>
+
+                            <div className="FormField">
+                                <label className="FormField__Label" htmlFor="phone">Phone number</label>
+                                <input type="text" id="phone" className="FormField__Input" placeholder="Enter your phone number" name="phone" value={this.state.phone} onChange={this.handleChange} />
                             </div>
-                            <div className="form-group row">
-                                <div className="col-4">
-                                    Email
-                                </div>
-                                <div className="col-8">
-                                    <input type="email" class="form-control" id="email" />
-                                </div>
+
+                            <div className="FormField">
+                                <label className="FormField__Label" htmlFor="email">Email</label>
+                                <input type="email" id="email" className="FormField__Input" placeholder="Enter your email address" name="email" value={this.state.email} onChange={this.handleChange} />
                             </div>
-                            <div className="form-group row">
-                                <div className="col-4">
-                                    Note
-                                </div>
-                                <div className="col-8">
-                                    <textarea class="form-control" id="note" rows="3"></textarea>
-                                </div>
+                            <div className="FormField">
+                                <label className="FormField__Label" htmlFor="note">Note</label>
+                                <textarea type="text" id="note" className="FormField__Input" name="note" placeholder="Enter your note" value={this.state.note} onChange={this.handleChange} />
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg">Continue</button>
-                        </div>
-                    </form>
+
+                            <div className="FormField">
+                                <button className="FormField__Button mr-20">Done</button>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
             </div>
         );

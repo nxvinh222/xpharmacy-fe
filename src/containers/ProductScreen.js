@@ -3,6 +3,18 @@ import { Dropdown, DropdownButton } from 'react-bootstrap';
 import NavBar from '../components/NavBar';
 import ProductField from '../components/ProductField';
 class ProductScreen extends Component {
+
+    state = {
+        category: ''
+    }
+
+    categoryHandler = (event) => {
+        event.preventDefault();
+        this.setState({
+            category: 'Addition'
+        }, () => console.log(this.state.category));
+    }
+
     render() {
         return (
             <div>
@@ -17,9 +29,9 @@ class ProductScreen extends Component {
                                         <div className="d-flex">
                                             <div className="mr-1 ml-md-auto">
                                             <DropdownButton id="dropdown-basic-button" title="Latest">
-                                                <Dropdown.Item href="#/action-1">Men</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-2">Women</Dropdown.Item>
-                                                <Dropdown.Item href="#/action-3">Children</Dropdown.Item>
+                                                <Dropdown.Item eventKey={1} onClick={(this.categoryHandler)}>Men</Dropdown.Item>
+                                                <Dropdown.Item eventKey={2}>Women</Dropdown.Item>
+                                                <Dropdown.Item eventKey={3}>Children</Dropdown.Item>
                                             </DropdownButton>
                                             </div> -->
                                             <div className="mr-1 ml-md-auto">
@@ -35,7 +47,7 @@ class ProductScreen extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <ProductField products={this.props.state.products}/>
+                                <ProductField category={this.state.category} products={this.props.state.products}/>
                                 <div className="row" data-aos="fade-up">
                                     <div className="col-md-12 text-center">
                                         <div className="site-block-27">

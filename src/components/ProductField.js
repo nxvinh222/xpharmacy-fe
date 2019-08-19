@@ -4,7 +4,8 @@ import Product from '../components/Product';
 class ProductField extends Component {
     
     render() {
-        const allproduct = this.props.products.map(item => <Product product={item}/>)
+        const filteredProducts = this.props.products.filter(item => item.category.includes(this.props.category));
+        const allproduct = filteredProducts.map(item => <Product product={item}/>)
         console.log(this.props.products)
         return (
             <div className="row mb-5">
