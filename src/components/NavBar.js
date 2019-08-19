@@ -6,6 +6,12 @@ class NavBar extends Component {
     state = {
 
     }
+
+    SignOut = (event) => {
+        localStorage.removeItem("token")
+        this.state.ProfileName = null
+        window.location.href='/'
+    }
     componentDidMount(){
         axios
         .get("/api/v1/auth/verify", {
@@ -23,14 +29,18 @@ class NavBar extends Component {
     render() {
             var token = localStorage.getItem('token')
             
-            let SignIn
+            let LogIn
             let SignUp
+            let LogOut
             if (token == null)
-                SignIn = (<Nav.Link href="/login">Log in</Nav.Link>)
+                LogIn = (<Nav.Link href="/login">Login</Nav.Link>)
             else
-                SignIn = (<Nav.Link href="/#">Welcome, {this.state.ProfileName}</Nav.Link>)
+                LogIn = (<Nav.Link href="/#">Welcome, {this.state.ProfileName}</Nav.Link>)
             if (token == null)
-                SignUp = (<Nav.Link href="/signup">Sign Up</Nav.Link>)
+                SignUp = (<Nav.Link href="/signup">SignUp</Nav.Link>)
+            if (token != null)
+                LogOut = (<Nav.Link href="/" onClick={this.SignOut}>LogOut</Nav.Link>)    
+            
 
 
         return (
@@ -43,8 +53,9 @@ class NavBar extends Component {
                         <Nav.Link href="/products">Products</Nav.Link>
                         <Nav.Link href="/order">Create Order</Nav.Link>
                         {SignUp}
-                        {SignIn}
+                        {LogIn}
                         <Nav.Link href="/cart">Cart</Nav.Link>
+                        {LogOut}
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

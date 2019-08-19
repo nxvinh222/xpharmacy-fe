@@ -27,6 +27,7 @@ class App extends Component {
       })
       .then(response => {
         localStorage.setItem('token', response.data.token)
+        window.location.href='/'
         // console.log(response);     
       })
   }
