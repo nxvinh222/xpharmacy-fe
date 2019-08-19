@@ -8,6 +8,9 @@ import axios from '../axios';
 
 class LoginScreen extends Component {
 
+    state = {
+
+    }
     // _onLogin = () => {
     //     axios
     //       .post("/api/v1/login", {

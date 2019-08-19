@@ -10,7 +10,7 @@ import ProductScreen from './containers/ProductScreen';
 import axios from './axios';
 import DashBoard from './containers/DashBoard';
 import Cart from './containers/Cart';
-import Order from './containers/Order';
+import Prescription from './containers/Prescription';
 import SignUpScreen from './containers/SignUpScreen';
 
 class App extends Component {
@@ -37,7 +37,7 @@ class App extends Component {
       .get("/api/v1/products", {
         headers: { token: localStorage.getItem('token')}
       })
-      .then(data =>{
+      .then(data => {
         this.setState({products: data.data})
         console.log(this.state.products);
       })
@@ -66,7 +66,7 @@ class App extends Component {
             return <Cart {...props} state={this.state}/>
           }} />
           <Route exact path="/order" render={(props) => {
-            return <Order {...props} state={this.state}/>
+            return <Prescription {...props} state={this.state}/>
           }} />
         </div>
       </BrowserRouter>

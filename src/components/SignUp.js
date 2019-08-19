@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../axios';
 
 class SignUpForm extends Component {
 
@@ -25,11 +25,11 @@ class SignUpForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         axios
-          .post('http://localhost:3001/api/v1/users',{
-              username: this.username,
-              password: this.password,
-              name: this.name,
-              email: this.email
+          .post('/api/v1/users',{
+              username: this.state.username,
+              password: this.state.password,
+              name: this.state.name,
+              email: this.state.email
           })
           .then(data => {
             console.log('The form was submitted with the following data:');

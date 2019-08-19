@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
-import Image from '../components/Image';
+import PrescriptionImage from '../components/PrescriptionImage';
 import { Pagination } from 'react-bootstrap';
 
 class Order extends Component {
@@ -16,7 +16,7 @@ class Order extends Component {
                         <Pagination.Item>{3}</Pagination.Item>
                     </Pagination> */}
                     <h5>1.Send us your prescriptions</h5>
-                    <Image/>
+                    <PrescriptionImage/>
                 </div>
             </div>
         );

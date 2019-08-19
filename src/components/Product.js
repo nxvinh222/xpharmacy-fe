@@ -24,7 +24,7 @@ class product extends Component {
                         <p className="mb-0">{this.props.product.info}s</p>
                         <p className="text-primary font-weight-bold">{this.props.product.price}$</p>
                         <a href="#" 
-                            onClick={this._addToCart} class="btn btn-primary">ADD TO CART
+                            onClick={this._addToCart} className="btn btn-primary">ADD TO CART
                         </a>
                     </div>
                 </div>
