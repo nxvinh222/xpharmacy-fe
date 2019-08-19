@@ -27,7 +27,7 @@ class App extends Component {
       })
       .then(response => {
         localStorage.setItem('token', response.data.token)
-        console.log(response);     
+        // console.log(response);     
       })
   }
   

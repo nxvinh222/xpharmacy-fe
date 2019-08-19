@@ -3,27 +3,36 @@ import { Navbar, Nav } from 'react-bootstrap';
 import axios from '../axios';
 
 class NavBar extends Component {
+    state = {
+
+    }
+    componentDidMount(){
+        axios
+        .get("/api/v1/auth/verify", {
+            headers: { token: localStorage.getItem('token')}
+        })
+        .then(data => {
+            // console.log(name)
+            this.setState({
+                ProfileName: data.data.name
+            })
+            
+            
+        })         
+    }
     render() {
             var token = localStorage.getItem('token')
-            let name
-            let test
+            
+            let SignIn
+            let SignUp
             if (token == null)
-                 test = (<Nav.Link href="/login">Log in</Nav.Link>)
-            else{
-                axios
-                    .get("/api/v1/auth/verify", {
-                        headers: { token: localStorage.getItem('token')}
-                    })
-                    .then(data => {
-                        name = data.data.name
-                        console.log(name)
-                        // test = (<Nav.Link href="/#">Welcome {data.data.name}</Nav.Link>)
-                        test = (<Nav.Link href="/login">Log in</Nav.Link>)
-                        
-                    })       
-                    console.log(name)
-                    // test = (<Nav.Link href="/#">Welcome {name}</Nav.Link>)   
-            }
+                SignIn = (<Nav.Link href="/login">Log in</Nav.Link>)
+            else
+                SignIn = (<Nav.Link href="/#">Welcome, {this.state.ProfileName}</Nav.Link>)
+            if (token == null)
+                SignUp = (<Nav.Link href="/signup">Sign Up</Nav.Link>)
+
+
         return (
             <div className="container">
                 <Navbar bg="navbar-light" expand="lg" style={{padding: '30px'}}>
@@ -33,8 +42,8 @@ class NavBar extends Component {
                         <Nav className="ml-auto mt-2 mt-lg-0">
                         <Nav.Link href="/products">Products</Nav.Link>
                         <Nav.Link href="/order">Create Order</Nav.Link>
-                        <Nav.Link href="/signup">Sign Up</Nav.Link>
-                        {test}
+                        {SignUp}
+                        {SignIn}
                         <Nav.Link href="/cart">Cart</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
