@@ -3,6 +3,20 @@ import { Dropdown, DropdownButton } from 'react-bootstrap';
 import NavBar from '../components/NavBar';
 import ProductField from '../components/ProductField';
 class ProductScreen extends Component {
+<<<<<<< HEAD
+    state = {
+        
+    }
+    Nam123 = (value, event) => {
+        event.preventDefault()
+        this.setState({
+            CurrentCategory: value
+        },()=>{
+            console.log(this.state.CurrentCategory)
+        })
+        
+    }
+=======
 
     state = {
         category: ''
@@ -15,6 +29,7 @@ class ProductScreen extends Component {
         }, () => console.log(this.state.category));
     }
 
+>>>>>>> 104c83605d42f7ef0c6f1614c8176dc8893f9f57
     render() {
         return (
             <div>
@@ -36,7 +51,7 @@ class ProductScreen extends Component {
                                             </div> -->
                                             <div className="mr-1 ml-md-auto">
                                                 <DropdownButton id="dropdown-basic-button" title="Reference">
-                                                    <Dropdown.Item href="#/action-1">Relevance</Dropdown.Item>
+                                                    <Dropdown.Item href="#/action-1" onClick = {(event)=>this.Nam123( "relevant", event)} >Relevance</Dropdown.Item>
                                                     <Dropdown.Item href="#/action-2">Name, A to Z</Dropdown.Item>
                                                     <Dropdown.Item href="#/action-3">Name, Z to A</Dropdown.Item>
                                                     <Dropdown.Divider/>
