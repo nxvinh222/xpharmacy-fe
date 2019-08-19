@@ -8,10 +8,10 @@ class ProductScreen extends Component {
         category: ''
     }
 
-    categoryHandler = (event) => {
+    categoryHandler = (event,cat) => {
         event.preventDefault();
         this.setState({
-            category: 'Addition'
+            category: event.value
         }, () => console.log(this.state.category));
     }
 
@@ -29,7 +29,7 @@ class ProductScreen extends Component {
                                         <div className="d-flex">
                                             <div className="mr-1 ml-md-auto">
                                             <DropdownButton id="dropdown-basic-button" title="Latest">
-                                                <Dropdown.Item eventKey={1} onClick={(this.categoryHandler)}>Men</Dropdown.Item>
+                                                <Dropdown.Item eventKey={1} onClick={(this.categoryHandler)} value={'Addition'}>Men</Dropdown.Item>
                                                 <Dropdown.Item eventKey={2}>Women</Dropdown.Item>
                                                 <Dropdown.Item eventKey={3}>Children</Dropdown.Item>
                                             </DropdownButton>
