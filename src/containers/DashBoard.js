@@ -31,7 +31,7 @@ class DashBoard extends Component {
                                 Goodbye
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
-                                <Delete arrays={this.props.products}/>
+                                <Delete onSearchChanged={this.props.onSearchChanged} searchString={this.props.state.searchString} products={this.props.state.products}/>
                             </Tab.Pane>
                         </Tab.Content>
                         </Col>
