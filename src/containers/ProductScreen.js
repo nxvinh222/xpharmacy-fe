@@ -3,7 +3,6 @@ import { Dropdown, DropdownButton } from 'react-bootstrap';
 import NavBar from '../components/NavBar';
 import ProductField from '../components/ProductField';
 class ProductScreen extends Component {
-<<<<<<< HEAD
     state = {
         
     }
@@ -16,20 +15,6 @@ class ProductScreen extends Component {
         })
         
     }
-=======
-
-    state = {
-        category: ''
-    }
-
-    categoryHandler = (event) => {
-        event.preventDefault();
-        this.setState({
-            category: 'Addition'
-        }, () => console.log(this.state.category));
-    }
-
->>>>>>> 104c83605d42f7ef0c6f1614c8176dc8893f9f57
     render() {
         return (
             <div>
