@@ -6,7 +6,7 @@ class Add extends Component {
         name: '',
         price: 0,
         info: '',
-        image: [],
+        image: null,
         category: '',
         sold: 0
     };
@@ -16,32 +16,57 @@ class Add extends Component {
         let value = target.value;
         let name = target.name;
 
-        this.setState({
-        [name]: value
-        });
+            this.setState({
+                [name]: value
+            })
+        
+    }
+
+    handleImage = (event) => {
+        let image = event.target.files[0]
+        this.setState({image: image})
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        axios
-        .post('/api/v1/products',{
-            name: this.state.name,
-            price: this.state.price,
-            info: this.state.info,
-            image: this.state.image,
-            category: this.state.category,
-            sold: this.state.sold
+        console.log(this.state)
+        let image = new FormData()
+        image.append("image", this.state.image)
+        axios.post('/api/v1/imageUploads', image, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
         })
         .then(data => {
-            console.log('The form was submitted with the following data:');
-            console.log(data);
-        })
+            axios
+                .post('/api/v1/products',{
+                    name: this.state.name,
+                    price: this.state.price,
+                    info: this.state.info,
+                    image: data.path,
+                    category: this.state.category,
+                    sold: this.state.sold
+                })
+        }).catch(err => console.log(err))
+        // axios
+        // .post('/api/v1/products',{
+        //     name: this.state.name,
+        //     price: this.state.price,
+        //     info: this.state.info,
+        //     image: this.state.image,
+        //     category: this.state.category,
+        //     sold: this.state.sold
+        // })
+        // .then(data => {
+        //     console.log('The form was submitted with the following data:');
+        //     console.log(data);
+        // })
     }
     render() {
         return (
             <div>
                 <div className="FormCenter">
-                    <form onSubmit={this.handleSubmit} className="FormFields">
+                    <form onSubmit={this.handleSubmit} className="FormFields" >
                         <div className="FormField">
                         <label className="FormField__Label" htmlFor="name">Name</label>
                         <input type="text" id="name" className="FormField__Input" placeholder="Product's Name" name="name" value={this.state.name} onChange={this.handleChange} />
@@ -56,7 +81,7 @@ class Add extends Component {
                         </div>
                         <div className="FormField">
                         <label className="FormField__Label" htmlFor="image">Image</label>
-                        <input type="file" id="image" className="FormField__Input" placeholder="Image" name="image" value={this.state.image} onChange={this.handleChange} />
+                        <input type="file" id="image" className="FormField__Input" placeholder="Image" name="image" onChange={this.handleImage} />
                         </div>
                         <div className="FormField">
                         <label className="FormField__Label" htmlFor="category">Category</label>
