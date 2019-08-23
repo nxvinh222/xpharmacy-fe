@@ -23,7 +23,7 @@ class Footer extends Component {
                                 <form action="/">
                                         <div className="form-group form-inline my-2 my-lg-0 mr-auto">
                                             <input type="text" className="form-control" width="300" name="" id="" aria-describedby="emailHelpId" placeholder="Enter your search..."/>
-                                            <button className="btn btn-primary" type="submit"><i className="fa fa-search"></i></button>
+                                            <button className="btn btn-primary" type="submit"><i className="fa fa-search"></i>Search</button>
                                         </div>
                                 </form>                               
                             </div>

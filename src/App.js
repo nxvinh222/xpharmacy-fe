@@ -16,7 +16,8 @@ import SignUpScreen from './containers/SignUpScreen';
 class App extends Component {
 
   state = {
-    products: []
+    products: [],
+    searchString: ''
   }
 
   _onLogin = (username, password) => {
@@ -31,7 +32,9 @@ class App extends Component {
         // console.log(response);     
       })
   }
-  
+
+  _onSearchChanged = text => this.setState({searchString : text});
+
   componentDidMount(){
     axios
       .get("/api/v1/products", {
@@ -48,7 +51,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Route exact path="/" render={(props) => {
-            return <HomeScreen {...props} state={this.state}/>
+            return <HomeScreen {...props} state={this.state} _onSearchChanged={this._onSearchChanged}/>
           }} />
           <Route exact path="/login" render={(props) => {
             return <LoginScreen {...props} state={this.state} _onLogin={this._onLogin}/>
@@ -60,7 +63,7 @@ class App extends Component {
             return <ProductScreen {...props} state={this.state}/>
           }} />
           <Route exact path="/dashboard" render={(props) => {
-            return <DashBoard {...props} state={this.state}/>
+            return <DashBoard {...props} state={this.state} onSearchChanged={this._onSearchChanged}/>
           }} />
           <Route exact path="/cart" render={(props) => {
             return <Cart {...props} state={this.state}/>
