@@ -38,12 +38,13 @@ class Add extends Component {
             }
         })
         .then(data => {
+            console.log(data.data.path)
             axios
                 .post('/api/v1/products',{
                     name: this.state.name,
                     price: this.state.price,
                     info: this.state.info,
-                    image: data.path,
+                    image: data.data.path,
                     category: this.state.category,
                     sold: this.state.sold
                 })
