@@ -1,15 +1,40 @@
 import React, { Component } from 'react';
 import axios from '../axios';
+import { Next } from 'react-bootstrap/PageItem';
 
 class product extends Component {
 
     _addToCart = (event) => {
         var cart;
-        if (localStorage.getItem('cart')==null)
-            cart = []
-        else
+        if (localStorage.getItem('cart')==null){
+                cart = []
+                cart.push({
+                    id: this.props.product._id,
+                    quantity: 1,
+                    price: this.props.product.price,
+                    name: this.props.product.name
+                });
+        }
+        else{
             cart = JSON.parse(localStorage.getItem('cart'));
-        cart.push(this.props.product._id);
+            var flag = false
+            for (let element of cart){
+                if (element.id == this.props.product._id){
+                    element.quantity++;
+                    flag = true;
+                    break;
+                }              
+            }
+            if (flag!=true){
+                cart.push({
+                    id: this.props.product._id,
+                    quantity: 1,
+                    price: this.props.product.price,
+                    name: this.props.product.name
+                });
+            }
+        }
+        
         localStorage.setItem('cart', JSON.stringify(cart));
         event.preventDefault();
     }
