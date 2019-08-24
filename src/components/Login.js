@@ -46,7 +46,7 @@ class Login extends Component {
                         <button type="submit" className="btn btn-primary" onClick={this.Login}>Submit</button>
                     </form>
                 </div> */}
-                <div className="FormCenter">
+                <div className="FormCenter mx-auto">
                     <form onSubmit={this.Login} className="FormFields">
                     <div className="FormField">
                         <label className="FormField__Label" htmlFor="username">Username</label>

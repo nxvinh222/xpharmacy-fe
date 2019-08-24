@@ -73,26 +73,26 @@ class ProductScreen extends Component {
                                         <li className="mb-1">
                                             <a 
                                             href="#"
-                                            onClick={(event) => this.categoryHandler("Addition",event)} 
+                                            onClick={(event) => this.categoryHandler("Medicine",event)} 
                                             className="d-flex">
-                                                <span>Addition</span> 
+                                                <span>Medicine</span> 
                                                 <span className="text-black ml-auto">(2,220)</span>
                                             </a>
                                         </li>
                                         <li className="mb-1">
                                             <a
                                             href="#" 
-                                            onClick={(event) => this.categoryHandler("Masturbate",event)} 
+                                            onClick={(event) => this.categoryHandler("Beauty",event)} 
                                             className="d-flex">
-                                                <span>Masturbate</span> 
+                                                <span>Beauty</span> 
                                                 <span className="text-black ml-auto">(2,550)</span>
                                             </a>
                                         </li>
                                         <li className="mb-1">
                                             <a 
                                             href="#"
-                                            onClick={(event) => this.categoryHandler("Pleasure",event)} 
-                                            className="d-flex"><span>Pleasure</span> 
+                                            onClick={(event) => this.categoryHandler("Health",event)} 
+                                            className="d-flex"><span>Health</span> 
                                             <span className="text-black ml-auto">(2,124)</span>
                                             </a>
                                         </li>
