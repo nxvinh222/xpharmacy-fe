@@ -70,6 +70,15 @@ class ProductScreen extends Component {
                                 <div className="border p-4 rounded mb-4">
                                     <h3 className="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
                                     <ul className="list-unstyled mb-0">
+                                    <li className="mb-1">
+                                            <a 
+                                            href="#"
+                                            onClick={(event) => this.categoryHandler("",event)} 
+                                            className="d-flex">
+                                                <span>All</span> 
+                                                <span className="text-black ml-auto">(4,220)</span>
+                                            </a>
+                                    </li>
                                         <li className="mb-1">
                                             <a 
                                             href="#"
