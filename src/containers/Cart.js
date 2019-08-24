@@ -46,10 +46,11 @@ class Cart extends Component {
         var cart = JSON.parse(localStorage.getItem('cart'))
         var totalPrice = 0
         // console.log(cart)
-        for (let item of cart){
-            totalPrice += (item.quantity * item.price)
-            // console.log(item)
-        }
+        if (cart != null)
+            for (let item of cart){
+                totalPrice += (item.quantity * item.price)
+                // console.log(item)
+            }
         // console.log(totalPrice)
         this.setState({total: totalPrice})
     }
@@ -66,8 +67,10 @@ class Cart extends Component {
         //     }
         // })
 
+        if (cart != null){
+            var allItems = cart.map(item => <CartItem id={item.id} quantity={item.quantity} />)
+        }
         
-        var allItems = cart.map(item => <CartItem id={item.id} quantity={item.quantity} />)
         // var totalPrice = 0
         // for (let item in cart){
         //     totalPrice += item.quantity * item.price
