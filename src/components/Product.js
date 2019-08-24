@@ -1,9 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import axios from '../axios';
+<<<<<<< HEAD
+import { Modal, Button } from 'react-bootstrap';
+=======
 import { Next } from 'react-bootstrap/PageItem';
+>>>>>>> 138d423d7e0ee9277fc0b25e1117ad71cde0f320
 
 class product extends Component {
-
+    state = {
+        field: this.props.field
+    }
     _addToCart = (event) => {
         var cart;
         if (localStorage.getItem('cart')==null){
@@ -39,28 +45,72 @@ class product extends Component {
         event.preventDefault();
     }
 
-    _deleteProd = (event) => {
-        event.preventDefault();
-        axios.delete(`/api/v1/products/${this.props.product._id}`);
+    _deleteProd = () => {
+        axios
+            .delete(`/api/v1/products/${this.props.product._id}`)
+            .then(alert("Delete success"))
+            .catch(err => console.log(err));
     }
-    
+
     render() {
-        const func = this.props.delup === 1 ?
-        <a href="#" 
-            onClick={this._addToCart} className="btn btn-primary">ADD TO CART
-        </a>
-        :   
-        <button className="btn btn-primary" type="submit" onClick={this._deleteProd}>Delete</button>
+        const Delete = () => {
+            const [show, setShow] = useState(false);
+          
+            const handleClose = () => setShow(false);
+            const handleShow = () => setShow(true);
+            const handleDelete = () => {
+                this._deleteProd();
+                setShow(false);
+            }
+          
+            return (
+              <>
+                <Button variant="primary" onClick={handleShow}>
+                  Delete
+                </Button>
+          
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Verify</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>Are you sure you wish to delete this item?</Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                      No
+                    </Button>
+                    <Button variant="primary" onClick={handleDelete}>
+                      Yes
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+              </>
+            );
+        }
+        
+        const func = () => {
+            let button
+            if(this.state.field === "product") {
+                button = (
+                    <a href="#" 
+                        onClick={this._addToCart} className="btn btn-primary">ADD TO CART
+                    </a>
+                )
+            } else if(this.state.field === "delete") {
+                button = ( <Delete/> )
+            }
+            return button;
+        }
+        const hello = () => console.log(this.state.field);
         return (
             <div className="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                 <div className="block-4 text-center border">
                     <figure className="block-4-image">
-                    <a href="#"><img src={this.props.product.image} alt="Image placeholder" className="img-fluid"/></a>
+                    <a href={`/api/v1/products/${this.props.product._id}`}><img src={this.props.product.image} alt="Image placeholder" className="img-fluid"/></a>
                     </figure>
                     <div className="block-4-text p-4">
                         <h3><a href="shop-single.html">{this.props.product.name}</a></h3>
                         <p className="text-primary font-weight-bold">{this.props.product.price}$</p>
-                        {func}
+                        {func()}
                     </div>
                 </div>
             </div>

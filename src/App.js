@@ -12,6 +12,7 @@ import DashBoard from './containers/DashBoard';
 import Cart from './containers/Cart';
 import Prescription from './containers/Prescription';
 import SignUpScreen from './containers/SignUpScreen';
+import DetailProduct from './containers/DetailScreen';
 
 class App extends Component {
 
@@ -61,6 +62,9 @@ class App extends Component {
           }} />
           <Route exact path="/products" render={(props) => {
             return <ProductScreen {...props} state={this.state}/>
+          }} />
+          <Route exact path="/products/:id" render={(props) => {
+            return <DetailProduct {...props} state={this.state}/>
           }} />
           <Route exact path="/dashboard" render={(props) => {
             return <DashBoard {...props} state={this.state} onSearchChanged={this._onSearchChanged}/>
