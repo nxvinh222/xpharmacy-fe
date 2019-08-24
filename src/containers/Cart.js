@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Navbar from '../components/NavBar';
 import axios from '../axios';
 import { Collapse } from 'react-bootstrap';
+
+import CartItem from '../components/CartItem';
 class Cart extends Component {
 
     state = {
@@ -9,7 +11,8 @@ class Cart extends Component {
         address: '',
         phone: '',
         email: '',
-        note: ''
+        note: '',
+        total: 0
     }
 
     handleChange = (event) => {
@@ -29,32 +32,55 @@ class Cart extends Component {
             name: this.state.name,
             address: this.state.address,
             phone: this.state.phone,
-            email: this.state.email,
-            date: new Date().toLocaleString()
+            date: new Date().toLocaleString(),
+            total: this.state.total,
+            products: JSON.parse(localStorage.getItem('cart')),
+            status: "Delivering"
         })
         .then(data => console.log(data))
         .catch(err => console.log(err));
-        
+        localStorage.removeItem('cart')
+    }
+
+    componentDidMount(){
+        var cart = JSON.parse(localStorage.getItem('cart'))
+        var totalPrice = 0
+        // console.log(cart)
+        for (let item of cart){
+            totalPrice += (item.quantity * item.price)
+            // console.log(item)
+        }
+        // console.log(totalPrice)
+        this.setState({total: totalPrice})
     }
 
     render() {
+        var cart = JSON.parse(localStorage.getItem('cart'))
+        // this.setState({cart: cart})
+        // var filteredCart = cart.filter((item,index) => cart.indexOf(item) === index).map(item => {
+        //     return {
+        //         item,
+        //         quantity: cart.reduce((total, current)=>{
+        //             return total + (current === item ? 1 : 0);
+        //         }, 0)
+        //     }
+        // })
+
+        
+        var allItems = cart.map(item => <CartItem id={item.id} quantity={item.quantity} />)
+        // var totalPrice = 0
+        // for (let item in cart){
+        //     totalPrice += item.quantity * item.price
+        // }
+        // this.setState({price: totalPrice})
         return (
             <div>
                 <Navbar/>
                 <div className="container">
                     <h1 className="font-weight-bold">MY CART</h1>
                     <hr/>
-                    <div className="row">
-                        <div className="col-6">
-
-                        </div>
-                        <div className="col-4">
-                            <input className="w-25" type="number"></input> x $15.2
-                        </div>
-                        <div className="col-2">
-                            $0
-                        </div>
-                    </div>
+                    {allItems}
+                    Total = {this.state.total}
                     <hr/>
                     <h1 className="font-weight-bold">DELIVERY</h1>
                     <div className="FormCenter">
