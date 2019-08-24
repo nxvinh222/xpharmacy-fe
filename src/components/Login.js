@@ -6,14 +6,6 @@ class Login extends Component {
         username: '',
         password: ''
     }
-// cho em gọi request đâu :v 
-    // handleUsernameChange = event => {
-    //     this.setState({username: event.target.value})
-    // }
-
-    // handlePasswordChange = event => {
-    //     this.setState({password: event.target.value})
-    // }
 
     handleChange = (event) => {
         let target = event.target;
@@ -35,17 +27,7 @@ class Login extends Component {
     
         return (
             <div className="container">
-                {/* <div className="container">
-                    <form>
-                        <div className="form-group">
-                            <input onChange={this.handleUsernameChange} type="text" className="form-control" id="exampleInputEmail1" placeholder="Enter username"/>
-                        </div>
-                        <div className="form-group">
-                            <input onChange={this.handlePasswordChange} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
-                        </div>
-                        <button type="submit" className="btn btn-primary" onClick={this.Login}>Submit</button>
-                    </form>
-                </div> */}
+                <h2>Login</h2>
                 <div className="FormCenter mx-auto">
                     <form onSubmit={this.Login} className="FormFields">
                     <div className="FormField">
