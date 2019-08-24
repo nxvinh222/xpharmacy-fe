@@ -42,8 +42,8 @@ class SignUpForm extends Component {
     render() {
         return (
           <div className="container">
-            
-            <div className="FormCenter">
+            <h2>Sign Up</h2>
+            <div className="FormCenter mx-auto">
               <form onSubmit={this.handleSubmit} className="FormFields">
                 <div className="FormField">
                   <label className="FormField__Label" htmlFor="name">Full name</label>

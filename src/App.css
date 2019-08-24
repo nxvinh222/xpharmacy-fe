@@ -108,3 +108,12 @@
 .Dashboard {
   margin-top: 50px;
 }
+
+.detail_Product {
+  text-align: left;
+  margin-top: 100px;
+}
+
+.detail_Product h2 {
+  color: blue
+}

@@ -6,6 +6,7 @@ class ProductScreen extends Component {
 
     state = {
         category: '',
+        products: this.props.state.products
     }
 
     categoryHandler = (value,event) => {
@@ -33,8 +34,8 @@ class ProductScreen extends Component {
                                                     <Dropdown.Item href="#/action-2">Name, A to Z</Dropdown.Item>
                                                     <Dropdown.Item href="#/action-3">Name, Z to A</Dropdown.Item>
                                                     <Dropdown.Divider/>
-                                                    <Dropdown.Item href="#/action-3">Price, low to high</Dropdown.Item>
-                                                    <Dropdown.Item href="#/action-3">Price, high to low</Dropdown.Item>
+                                                    <Dropdown.Item href="#/action-3" onSelect={this.sortByPriceAsc}>Price, low to high</Dropdown.Item>
+                                                    <Dropdown.Item href="#/action-3" onSelect={this.sortByPriceDesc}>Price, high to low</Dropdown.Item>
                                                 </DropdownButton>
                                             </div>
                                         </div>

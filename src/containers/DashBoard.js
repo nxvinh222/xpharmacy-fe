@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Nav, Row, Tab, Col } from 'react-bootstrap';
 import Add from '../components/Add';
 import Delete from '../components/Delete'
-import Update from '../components/Update';
 
 class DashBoard extends Component {
     render() {

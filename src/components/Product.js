@@ -1,10 +1,7 @@
 import React, { Component, useState } from 'react';
 import axios from '../axios';
-<<<<<<< HEAD
 import { Modal, Button } from 'react-bootstrap';
-=======
-import { Next } from 'react-bootstrap/PageItem';
->>>>>>> 138d423d7e0ee9277fc0b25e1117ad71cde0f320
+import { Link } from 'react-router-dom';
 
 class product extends Component {
     state = {
@@ -12,35 +9,11 @@ class product extends Component {
     }
     _addToCart = (event) => {
         var cart;
-        if (localStorage.getItem('cart')==null){
-                cart = []
-                cart.push({
-                    id: this.props.product._id,
-                    quantity: 1,
-                    price: this.props.product.price,
-                    name: this.props.product.name
-                });
-        }
-        else{
+        if (localStorage.getItem('cart')==null)
+            cart = []
+        else
             cart = JSON.parse(localStorage.getItem('cart'));
-            var flag = false
-            for (let element of cart){
-                if (element.id == this.props.product._id){
-                    element.quantity++;
-                    flag = true;
-                    break;
-                }              
-            }
-            if (flag!=true){
-                cart.push({
-                    id: this.props.product._id,
-                    quantity: 1,
-                    price: this.props.product.price,
-                    name: this.props.product.name
-                });
-            }
-        }
-        
+        cart.push(this.props.product._id);
         localStorage.setItem('cart', JSON.stringify(cart));
         event.preventDefault();
     }
@@ -103,9 +76,11 @@ class product extends Component {
         const hello = () => console.log(this.state.field);
         return (
             <div className="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                <div className="block-4 text-center border">
+                <div key={this.props.product._id} className="block-4 text-center border">
                     <figure className="block-4-image">
-                    <a href={`/api/v1/products/${this.props.product._id}`}><img src={this.props.product.image} alt="Image placeholder" className="img-fluid"/></a>
+                    <Link to={`/products/${this.props.product._id}`}>
+                        <img src={this.props.product.image} alt="Image placeholder" className="img-fluid"/>
+                    </Link>
                     </figure>
                     <div className="block-4-text p-4">
                         <h3><a href="shop-single.html">{this.props.product.name}</a></h3>
