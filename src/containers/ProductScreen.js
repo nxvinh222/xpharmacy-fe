@@ -5,7 +5,8 @@ import ProductField from '../components/ProductField';
 class ProductScreen extends Component {
 
     state = {
-        category: ''
+        category: '',
+        delup: 1
     }
 
     categoryHandler = (value,event) => {
@@ -47,7 +48,7 @@ class ProductScreen extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <ProductField category={this.state.category} products={this.props.state.products}/>
+                                <ProductField delup={this.state.delup} category={this.state.category} products={this.props.state.products}/>
                                 <div className="row" data-aos="fade-up">
                                     <div className="col-md-12 text-center">
                                         <div className="site-block-27">
