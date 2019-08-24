@@ -1,10 +1,6 @@
 import React, { Component, useState } from 'react';
 import axios from '../axios';
-<<<<<<< HEAD
 import { Modal, Button } from 'react-bootstrap';
-=======
-import { Next } from 'react-bootstrap/PageItem';
->>>>>>> 138d423d7e0ee9277fc0b25e1117ad71cde0f320
 
 class product extends Component {
     state = {
