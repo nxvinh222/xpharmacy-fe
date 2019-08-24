@@ -1,3 +1,3 @@
 export default {
-    rootPath: "http://localhost:3001"
+    rootPath: "http://xpharmacy-server.herokuapp.com/"
 }
