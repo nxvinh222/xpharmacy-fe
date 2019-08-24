@@ -3,13 +3,25 @@ import { Nav, Row, Tab, Col } from 'react-bootstrap';
 import Add from '../components/Add';
 import Delete from '../components/Delete'
 import Update from '../components/Update';
+import axios from '../axios';
 
 class DashBoard extends Component {
+    state = {
+
+    }
     render() {
-        return (
-            <div className="container">
-                <h1>Dashboard</h1>
-                <div className="Dashboard">
+        axios
+        .get("/api/v1/auth/verify", {
+            headers: { token: localStorage.getItem('token')}
+        })
+        .then(data => {
+            // console.log(name)
+            if (data.data.admin == 1)
+            this.setState({
+                admin: data.data.admin
+            })      
+        })      
+        const display = this.state.admin ? (           
                     <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                         <Row>
                             <Col sm={3}>
@@ -27,13 +39,23 @@ class DashBoard extends Component {
                                 <Tab.Pane eventKey="first">
                                     <Add/>
                                 </Tab.Pane>
-                                <Tab.Pane eventKey="second">
+                                <Tab.Pane eventKey="second"> 
                                     <Delete onSearchChanged={this.props.onSearchChanged} searchString={this.props.state.searchString} products={this.props.state.products}/>
                                 </Tab.Pane>
                             </Tab.Content>
                             </Col>
                         </Row>
-                    </Tab.Container>
+                    </Tab.Container>              
+        ) : (
+            <div>
+                Hello
+            </div>
+        )
+        return (
+            <div className="container">
+                <h1>Dashboard</h1>
+                <div className="Dashboard">
+                    {display}
                 </div>
             </div>
         );
