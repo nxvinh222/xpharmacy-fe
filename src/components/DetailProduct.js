@@ -40,7 +40,7 @@ class DetailProduct extends Component {
         const displayedProduct = this.props.product ? 
         <div className="detail_Product">
             <div className="row">
-                <div className="col px-md-5">          
+                <div className="col-6 px-md-5">          
                     {/* <img className="img-fluid" src={this.props.product.image} style={{width:400,scale:1.5,offset:{vertical:0,horizontal:10}}}/> */}
                     <ImageZoom
                         image={{
@@ -53,7 +53,7 @@ class DetailProduct extends Component {
                         }}
                     />
                 </div>
-                <div className="col px-md-5">
+                <div className="col-6 px-md-5">
                     <h3>{this.props.product.name}</h3>
                     <h2>{this.props.product.price}$</h2>
                     <p>{this.props.product.info}</p>
@@ -65,7 +65,7 @@ class DetailProduct extends Component {
         </div>
         : ''
         return (
-            <div>
+            <div className="container"> 
                 {displayedProduct}
             </div>
         );
