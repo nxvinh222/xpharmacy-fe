@@ -3,7 +3,6 @@ import { Dropdown, DropdownButton } from 'react-bootstrap';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ProductField from '../components/ProductField';
-import Footer from '../components/Footer';
 class ProductScreen extends Component {
 
     state = {
