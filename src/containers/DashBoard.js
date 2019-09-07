@@ -3,6 +3,7 @@ import axios from '../axios';
 import { Nav, Row, Tab, Col } from 'react-bootstrap';
 import Add from '../components/Add';
 import Delete from '../components/Delete'
+import axios from '../axios'
 
 class DashBoard extends Component {
     state = {
