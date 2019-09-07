@@ -3,6 +3,7 @@ import axios from '../axios';
 import { Nav, Row, Tab, Col } from 'react-bootstrap';
 import Add from '../components/Add';
 import Delete from '../components/Delete';
+import NavBar from '../components/NavBar';
 
 class DashBoard extends Component {
     state = {
@@ -50,8 +51,9 @@ class DashBoard extends Component {
                 Hello
             </div>
         )
-        return (
+        return (         
             <div className="container">
+                <NavBar/>
                 <h1>Dashboard</h1>
                 <div className="Dashboard">
                     {display}
