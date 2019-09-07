@@ -8,7 +8,7 @@ class Banner extends Component {
                 <div className="container">
                     <div className="container hero-banner">
                         <div id="img1">
-                            <img src="/v2osk-184484-unsplash.jpg" style={
+                            <img src="http://i.imgur.com/Hhsmzqe.jpg" style={
                                 {width: "100%",
                                 height: "100%",
                             objectFit: "cover"}}/>
