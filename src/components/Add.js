@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from '../axios';
+import axiosUpload from 'axios';
 
 class Add extends Component {
     state = {
@@ -32,19 +33,21 @@ class Add extends Component {
         console.log(this.state)
         let image = new FormData()
         image.append("image", this.state.image)
-        axios.post('/api/v1/imageUploads', image, {
+        axiosUpload.post('https://api.imgur.com/3/image', image, {
             headers: {
-                'Content-Type': 'multipart/form-data'
+                'Content-Type': 'multipart/form-data',
+                'Authorization': 'Client-ID 3cebd03a2911a36'
             }
         })
         .then(data => {
-            console.log(data.data.path)
+            console.log(data)
+            console.log(data.data.data.link)
             axios
                 .post('/api/v1/products',{
                     name: this.state.name,
                     price: this.state.price,
                     info: this.state.info,
-                    image: data.data.path,
+                    image: data.data.data.link,
                     category: this.state.category,
                     sold: this.state.sold
                 })
