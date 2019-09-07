@@ -37,7 +37,7 @@
   text-align: left;
   width: 50%;
   padding: 25px 40px;
-  margin-left: 100px;
+  
 }
 
 .FormField {
@@ -105,3 +105,15 @@
   margin-left: 5px;
 }
 
+.Dashboard {
+  margin-top: 50px;
+}
+
+.detail_Product {
+  text-align: left;
+  margin-top: 100px;
+}
+
+.detail_Product h2 {
+  color: blue
+}

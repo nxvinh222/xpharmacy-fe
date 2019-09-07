@@ -34,14 +34,16 @@ class SignUpForm extends Component {
           .then(data => {
             console.log('The form was submitted with the following data:');
             console.log(data);
+            alert("Signup success");
           })
+          .catch(err => console.log(err))
     }
 
     render() {
         return (
           <div className="container">
-            
-            <div className="FormCenter">
+            <h2>Sign Up</h2>
+            <div className="FormCenter mx-auto">
               <form onSubmit={this.handleSubmit} className="FormFields">
                 <div className="FormField">
                   <label className="FormField__Label" htmlFor="name">Full name</label>

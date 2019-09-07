@@ -4,7 +4,7 @@ class SearchField extends Component {
     _handleTextChange = event => this.props.onSearchChanged(event.target.value);
     render() {
         return (
-            <form className="col-3">
+            <form className="col-3 ml-auto mb-3">
                 <input onChange={this._handleTextChange} className="form-control" type="text" placeholder="Search" /> 
             </form>
         );

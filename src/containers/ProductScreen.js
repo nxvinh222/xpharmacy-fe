@@ -5,7 +5,8 @@ import ProductField from '../components/ProductField';
 class ProductScreen extends Component {
 
     state = {
-        category: ''
+        category: '',
+        products: this.props.state.products
     }
 
     categoryHandler = (value,event) => {
@@ -28,20 +29,13 @@ class ProductScreen extends Component {
                                         <div className="float-md-left mb-4"><h2 className="text-black h5">Shop All</h2></div>
                                         <div className="d-flex">
                                             <div className="mr-1 ml-md-auto">
-                                            <DropdownButton id="dropdown-basic-button" title="Latest">
-                                                <Dropdown.Item eventKey={1}>Men</Dropdown.Item>
-                                                <Dropdown.Item eventKey={2}>Women</Dropdown.Item>
-                                                <Dropdown.Item eventKey={3}>Children</Dropdown.Item>
-                                            </DropdownButton>
-                                            </div> -->
-                                            <div className="mr-1 ml-md-auto">
                                                 <DropdownButton id="dropdown-basic-button" title="Reference">
                                                     <Dropdown.Item href="#/action-1">Relevance</Dropdown.Item>
                                                     <Dropdown.Item href="#/action-2">Name, A to Z</Dropdown.Item>
                                                     <Dropdown.Item href="#/action-3">Name, Z to A</Dropdown.Item>
                                                     <Dropdown.Divider/>
-                                                    <Dropdown.Item href="#/action-3">Price, low to high</Dropdown.Item>
-                                                    <Dropdown.Item href="#/action-3">Price, high to low</Dropdown.Item>
+                                                    <Dropdown.Item href="#/action-3" onSelect={this.sortByPriceAsc}>Price, low to high</Dropdown.Item>
+                                                    <Dropdown.Item href="#/action-3" onSelect={this.sortByPriceDesc}>Price, high to low</Dropdown.Item>
                                                 </DropdownButton>
                                             </div>
                                         </div>
@@ -69,29 +63,38 @@ class ProductScreen extends Component {
                                 <div className="border p-4 rounded mb-4">
                                     <h3 className="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
                                     <ul className="list-unstyled mb-0">
+                                    <li className="mb-1">
+                                            <a 
+                                            href="#"
+                                            onClick={(event) => this.categoryHandler("",event)} 
+                                            className="d-flex">
+                                                <span>All</span> 
+                                                <span className="text-black ml-auto">(4,220)</span>
+                                            </a>
+                                    </li>
                                         <li className="mb-1">
                                             <a 
                                             href="#"
-                                            onClick={(event) => this.categoryHandler("Addition",event)} 
+                                            onClick={(event) => this.categoryHandler("Medicine",event)} 
                                             className="d-flex">
-                                                <span>Addition</span> 
+                                                <span>Medicine</span> 
                                                 <span className="text-black ml-auto">(2,220)</span>
                                             </a>
                                         </li>
                                         <li className="mb-1">
                                             <a
                                             href="#" 
-                                            onClick={(event) => this.categoryHandler("Masturbate",event)} 
+                                            onClick={(event) => this.categoryHandler("Beauty",event)} 
                                             className="d-flex">
-                                                <span>Masturbate</span> 
+                                                <span>Beauty</span> 
                                                 <span className="text-black ml-auto">(2,550)</span>
                                             </a>
                                         </li>
                                         <li className="mb-1">
                                             <a 
                                             href="#"
-                                            onClick={(event) => this.categoryHandler("Pleasure",event)} 
-                                            className="d-flex"><span>Pleasure</span> 
+                                            onClick={(event) => this.categoryHandler("Health",event)} 
+                                            className="d-flex"><span>Healthcare</span> 
                                             <span className="text-black ml-auto">(2,124)</span>
                                             </a>
                                         </li>

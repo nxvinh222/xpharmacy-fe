@@ -20,7 +20,7 @@ class Add extends Component {
             this.setState({
                 [name]: value
             })
-        
+        console.log(event.target.value);
     }
 
     handleImage = (event) => {
@@ -69,6 +69,7 @@ class Add extends Component {
     render() {
         return (
             <div>
+                <h3>Add product</h3>
                 <div className="FormCenter">
                     <form onSubmit={this.handleSubmit} className="FormFields" >
                         <div className="FormField">
@@ -89,7 +90,12 @@ class Add extends Component {
                         </div>
                         <div className="FormField">
                         <label className="FormField__Label" htmlFor="category">Category</label>
-                        <input type="text" id="category" className="FormField__Input" placeholder="Category" name="category" value={this.state.category} onChange={this.handleChange} />
+                        <select className="FormField__Input" id="category" name="category" value={this.state.category} onChange={this.handleChange}>
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="Medicine">Medicine</option>
+                            <option value="Health">Healthcare</option>
+                            <option value="Beauty">Beauty</option>
+                        </select>
                         </div>
                         <div className="FormField">
                         <label className="FormField__Label" htmlFor="sold">Sold</label>
