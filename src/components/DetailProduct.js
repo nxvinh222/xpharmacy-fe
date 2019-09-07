@@ -5,6 +5,7 @@ class DetailProduct extends Component {
         const displayedProduct = this.props.product ? 
         <div className="detail_Product">
             <div className="row">
+                <div className="col-1"></div>
                 <div className="col-5">          
                     <img className="img-fluid" src={this.props.product.image}/>
                 </div>

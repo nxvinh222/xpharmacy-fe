@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 import NavBar from '../components/NavBar';
 import ProductField from '../components/ProductField';
+import Footer from '../components/Footer';
 class ProductScreen extends Component {
 
     state = {
@@ -104,6 +105,7 @@ class ProductScreen extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer/>
             </div>
         );
     }

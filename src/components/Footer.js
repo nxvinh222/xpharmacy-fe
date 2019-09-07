@@ -18,14 +18,6 @@ class Footer extends Component {
                                     </div>
                                 </div>    
                             </div>
-                            <div className="col-md-3">
-                                <form action="/">
-                                        <div className="form-group form-inline my-2 my-lg-0 mr-auto">
-                                            <input type="text" className="form-control" width="300" name="" id="" aria-describedby="emailHelpId" placeholder="Enter your search..."/>
-                                            <button className="btn btn-primary" type="submit">Search</button>
-                                        </div>
-                                </form>                               
-                            </div>
                         </div>
                     </div>     
                 </div>

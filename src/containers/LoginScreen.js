@@ -5,6 +5,7 @@ import '../axios';
 import Login from '../components/Login';
 import NavBar from '../components/NavBar'
 import axios from '../axios';
+import Footer from '../components/Footer';
 
 class LoginScreen extends Component {
 
@@ -33,6 +34,7 @@ class LoginScreen extends Component {
             <div>
                 <NavBar/>
                <Login _onLogin={this.props._onLogin}/> 
+               <Footer/>
             </div>
         );
     }
