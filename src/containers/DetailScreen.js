@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
 import axios from '../axios';
 import DetailProduct from '../components/DetailProduct';
+import Footer from '../components/Footer';
 
 class DetailScreen extends Component {
     state = {
@@ -28,6 +29,7 @@ class DetailScreen extends Component {
                 <div className="mx-auto">
                     <DetailProduct product={this.state.product}/>
                 </div>
+                <Footer/>
             </div>
         );
     }

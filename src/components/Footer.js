@@ -6,7 +6,7 @@ class Footer extends Component {
             <div>
                 <div className="footer" style={{padding: '60px 0'}}>
                     <div className="container">
-                        <div className="row">
+                        {/* <div className="row">
                             <div className="col-md-9">
                                 <div className="brand-footer" style={{fontsize: '1.2rem'}}>xPharmacy.</div>
                                 <div className="duoi" style={{display: 'flex', padding:'0 17px'}}>
@@ -26,7 +26,20 @@ class Footer extends Component {
                                         </div>
                                 </form>                               
                             </div>
+                        </div> */}
+                        
+
+                        {/* <!-- Footer --> */}
+
+
+                        {/* <!-- Copyright --> */}
+                        <div className="footer-copyright text-center py-3">© 2018 Copyright:
+                            <a href="http://xpharmacyx.herokuapp.com/"> xPharmacy</a>
                         </div>
+                        {/* <!-- Copyright --> */}
+
+                        
+
                     </div>     
                 </div>
             </div>
