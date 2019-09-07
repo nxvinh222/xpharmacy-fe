@@ -20,7 +20,8 @@ class NavBar extends Component {
         .then(data => {
             // console.log(name)
             this.setState({
-                ProfileName: data.data.name
+                ProfileName: data.data.name,
+                admin: data.data.admin
             })
             
             
@@ -32,6 +33,7 @@ class NavBar extends Component {
             let LogIn
             let SignUp
             let LogOut
+            let DashBoard 
             if (token == null)
                 LogIn = (<Nav.Link href="/login">Login</Nav.Link>)
             else
@@ -39,7 +41,9 @@ class NavBar extends Component {
             if (token == null)
                 SignUp = (<Nav.Link href="/signup">SignUp</Nav.Link>)
             if (token != null)
-                LogOut = (<Nav.Link href="/" onClick={this.SignOut}>LogOut</Nav.Link>)    
+                LogOut = (<Nav.Link href="/" onClick={this.SignOut}>LogOut</Nav.Link>)       
+            if (this.state.admin == 1)
+                DashBoard = (<Nav.Link href="/dashboard">DashBoard</Nav.Link>)
             
 
 
@@ -50,6 +54,7 @@ class NavBar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto mt-2 mt-lg-0">
+                        {DashBoard}
                         <Nav.Link href="/products">Products</Nav.Link>
                         <Nav.Link href="/order">Create Order</Nav.Link>
                         {SignUp}
