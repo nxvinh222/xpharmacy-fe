@@ -52,19 +52,7 @@ class Add extends Component {
                     sold: this.state.sold
                 })
         }).catch(err => console.log(err))
-        // axios
-        // .post('/api/v1/products',{
-        //     name: this.state.name,
-        //     price: this.state.price,
-        //     info: this.state.info,
-        //     image: this.state.image,
-        //     category: this.state.category,
-        //     sold: this.state.sold
-        // })
-        // .then(data => {
-        //     console.log('The form was submitted with the following data:');
-        //     console.log(data);
-        // })
+        window.location.href='/dashboard'
     }
     render() {
         return (
