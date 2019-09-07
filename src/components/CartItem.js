@@ -12,7 +12,8 @@ class CartItem extends Component {
         .then(data =>{ 
             this.setState({
                 image: data.data.image,
-                price: data.data.price
+                price: data.data.price,
+                name: data.data.name
             })
             // console.log(data.data)
             }
@@ -24,7 +25,10 @@ class CartItem extends Component {
                 <div className="col-sm-6 col-lg-2 mb-4">
                     <img src={this.state.image} alt="Image placeholder" className="img-fluid"/>
                 </div>
-                <div className="col-4 ml-auto">
+                <div className="col-2">
+                    {this.state.name}
+                </div>
+                <div className="col-2 ml-auto">
                     <input className="w-25" type="number" value={this.props.quantity}></input> x {this.state.price}
                 </div>
                 <div className="col-2">
