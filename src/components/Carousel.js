@@ -9,7 +9,7 @@ class Slide extends Component {
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src="https://www.dockpharmacy.com/wp-content/uploads/2018/09/late-night-pharmacy-2-800x400.png"
+                        src="https://i.pinimg.com/originals/dd/3a/5b/dd3a5b37003c3c3b338cfa7ba8f0829b.jpg"
                         alt="First slide"
                         />
                         <Carousel.Caption>
@@ -20,7 +20,7 @@ class Slide extends Component {
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src="http://www.healthordisease.com/wp-content/uploads/2018/09/edrugsearch-800x400.png"
+                        src="https://i.pinimg.com/originals/11/35/bd/1135bddbf33983c9f7c2188e854c0cba.jpg"
                         alt="Third slide"
                         />
 
@@ -32,7 +32,7 @@ class Slide extends Component {
                     <Carousel.Item>
                         <img
                         className="d-block w-100"
-                        src="https://www.americaninno.com/wp-content/uploads/2018/12/fedex2-W-800x400.jpg"
+                        src="https://i.redd.it/9hzo8m4a0e721.png"
                         alt="Third slide"
                         />
 
