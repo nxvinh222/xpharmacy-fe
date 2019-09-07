@@ -51,8 +51,11 @@ class Add extends Component {
                     category: this.state.category,
                     sold: this.state.sold
                 })
+                .then(()=>{
+                    window.location.href='/dashboard'
+                })
         }).catch(err => console.log(err))
-        window.location.href='/dashboard'
+        
     }
     render() {
         return (
