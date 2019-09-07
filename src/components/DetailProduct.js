@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ImageZoom from 'react-medium-image-zoom'
+import ImageZoom from 'react-medium-image-zoom';
 
 class DetailProduct extends Component {
     _addToCart = (event) => {
@@ -40,7 +40,8 @@ class DetailProduct extends Component {
         const displayedProduct = this.props.product ? 
         <div className="detail_Product">
             <div className="row">
-                <div className="col-6 px-md-5">          
+                <div className="col-1"></div>
+                <div className="col-4 px-md-5">          
                     {/* <img className="img-fluid" src={this.props.product.image} style={{width:400,scale:1.5,offset:{vertical:0,horizontal:10}}}/> */}
                     <ImageZoom
                         image={{

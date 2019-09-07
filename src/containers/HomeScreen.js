@@ -17,7 +17,7 @@ class MainScreen extends Component {
                 <Carousel/>
                 <Feature/>
                 <ProductField products={this.props.state.products}/>
-                <Footer/>
+                {/* <Footer/> */}
             </div>
         );
     }

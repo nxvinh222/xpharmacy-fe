@@ -29,7 +29,11 @@ class DetailScreen extends Component {
                 <div className="mx-auto">
                     <DetailProduct product={this.state.product}/>
                 </div>
+<<<<<<< HEAD
                 <Footer/>
+=======
+                {/* <Footer/> */}
+>>>>>>> 1159b8fb0a5b5d49acda9228f8400380208da59e
             </div>
         );
     }

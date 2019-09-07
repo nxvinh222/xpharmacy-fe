@@ -18,6 +18,7 @@ class Footer extends Component {
                                     </div>
                                 </div>    
                             </div>
+<<<<<<< HEAD
                             <div className="col-md-3">
                                 <form action="/">
                                         <div className="form-group form-inline my-2 my-lg-0 mr-auto">
@@ -35,6 +36,8 @@ class Footer extends Component {
                         {/* <!-- Copyright --> */}
                         <div className="footer-copyright text-center py-3">© 2018 Copyright:
                             <a href="http://xpharmacyx.herokuapp.com/"> xPharmacy</a>
+=======
+>>>>>>> 1159b8fb0a5b5d49acda9228f8400380208da59e
                         </div>
                         {/* <!-- Copyright --> */}
 
