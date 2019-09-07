@@ -69,7 +69,7 @@ class ProductScreen extends Component {
                                             onClick={(event) => this.categoryHandler("",event)} 
                                             className="d-flex">
                                                 <span>All</span> 
-                                                <span className="text-black ml-auto">(4,220)</span>
+                                                {/* <span className="text-black ml-auto">(4,220)</span> */}
                                             </a>
                                     </li>
                                         <li className="mb-1">
@@ -78,7 +78,7 @@ class ProductScreen extends Component {
                                             onClick={(event) => this.categoryHandler("Medicine",event)} 
                                             className="d-flex">
                                                 <span>Medicine</span> 
-                                                <span className="text-black ml-auto">(2,220)</span>
+                                                {/* <span className="text-black ml-auto">(2,220)</span> */}
                                             </a>
                                         </li>
                                         <li className="mb-1">
@@ -87,7 +87,7 @@ class ProductScreen extends Component {
                                             onClick={(event) => this.categoryHandler("Beauty",event)} 
                                             className="d-flex">
                                                 <span>Beauty</span> 
-                                                <span className="text-black ml-auto">(2,550)</span>
+                                                {/* <span className="text-black ml-auto">(2,550)</span> */}
                                             </a>
                                         </li>
                                         <li className="mb-1">
@@ -95,7 +95,7 @@ class ProductScreen extends Component {
                                             href="#"
                                             onClick={(event) => this.categoryHandler("Health",event)} 
                                             className="d-flex"><span>Healthcare</span> 
-                                            <span className="text-black ml-auto">(2,124)</span>
+                                            {/* <span className="text-black ml-auto">(2,124)</span> */}
                                             </a>
                                         </li>
                                     </ul>
