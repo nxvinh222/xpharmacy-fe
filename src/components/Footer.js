@@ -18,7 +18,6 @@ class Footer extends Component {
                                     </div>
                                 </div>    
                             </div>
-<<<<<<< HEAD
                             <div className="col-md-3">
                                 <form action="/">
                                         <div className="form-group form-inline my-2 my-lg-0 mr-auto">
@@ -34,14 +33,46 @@ class Footer extends Component {
 
 
                         {/* <!-- Copyright --> */}
+                        {/* <div className="footer-copyright text-center py-3">© 2018 Copyright:
+                            <a href="http://xpharmacyx.herokuapp.com/"> xPharmacy</a>
+                        </div> */}
+                        {/* <!-- Copyright --> */}
+
+                        {/* <!-- Footer --> */}
+                        <footer className="page-footer font-small mdb-color darken-3 pt-4">
+
+                        {/* <!-- Footer Elements --> */}
+                        <div className="container">
+
+                            {/* <!--Grid row--> */}
+                            <div className="row d-flex justify-content-center">
+
+                            {/* <!--Grid column--> */}
+                            <div className="col-md-6">
+
+                                {/* <!-- Video --> */}
+                                <div className="embed-responsive embed-responsive-16by9 mb-4">
+                                <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/D4Fi1YBbzDY"
+                                    allowfullscreen></iframe>
+                                </div>
+
+                            </div>
+                            {/* <!--Grid column--> */}
+
+                            </div>
+                            {/* <!--Grid row--> */}
+
+                        </div>
+                        {/* <!-- Footer Elements --> */}
+
+                        {/* <!-- Copyright --> */}
                         <div className="footer-copyright text-center py-3">© 2018 Copyright:
                             <a href="http://xpharmacyx.herokuapp.com/"> xPharmacy</a>
-=======
->>>>>>> 1159b8fb0a5b5d49acda9228f8400380208da59e
                         </div>
                         {/* <!-- Copyright --> */}
 
-                        
+                        </footer>
+                        {/* <!-- Footer --> */}
 
                     </div>     
                 </div>
