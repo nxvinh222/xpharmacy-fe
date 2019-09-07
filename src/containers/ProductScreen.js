@@ -6,6 +6,7 @@ class ProductScreen extends Component {
 
     state = {
         category: '',
+        products: this.props.state.products
     }
 
     categoryHandler = (value,event) => {
@@ -33,8 +34,8 @@ class ProductScreen extends Component {
                                                     <Dropdown.Item href="#/action-2">Name, A to Z</Dropdown.Item>
                                                     <Dropdown.Item href="#/action-3">Name, Z to A</Dropdown.Item>
                                                     <Dropdown.Divider/>
-                                                    <Dropdown.Item href="#/action-3">Price, low to high</Dropdown.Item>
-                                                    <Dropdown.Item href="#/action-3">Price, high to low</Dropdown.Item>
+                                                    <Dropdown.Item href="#/action-3" onSelect={this.sortByPriceAsc}>Price, low to high</Dropdown.Item>
+                                                    <Dropdown.Item href="#/action-3" onSelect={this.sortByPriceDesc}>Price, high to low</Dropdown.Item>
                                                 </DropdownButton>
                                             </div>
                                         </div>
@@ -68,7 +69,7 @@ class ProductScreen extends Component {
                                             onClick={(event) => this.categoryHandler("",event)} 
                                             className="d-flex">
                                                 <span>All</span> 
-                                                <span className="text-black ml-auto">(4,220)</span>
+                                                {/* <span className="text-black ml-auto">(4,220)</span> */}
                                             </a>
                                     </li>
                                         <li className="mb-1">
@@ -77,7 +78,7 @@ class ProductScreen extends Component {
                                             onClick={(event) => this.categoryHandler("Medicine",event)} 
                                             className="d-flex">
                                                 <span>Medicine</span> 
-                                                <span className="text-black ml-auto">(2,220)</span>
+                                                {/* <span className="text-black ml-auto">(2,220)</span> */}
                                             </a>
                                         </li>
                                         <li className="mb-1">
@@ -86,7 +87,7 @@ class ProductScreen extends Component {
                                             onClick={(event) => this.categoryHandler("Beauty",event)} 
                                             className="d-flex">
                                                 <span>Beauty</span> 
-                                                <span className="text-black ml-auto">(2,550)</span>
+                                                {/* <span className="text-black ml-auto">(2,550)</span> */}
                                             </a>
                                         </li>
                                         <li className="mb-1">
@@ -94,7 +95,7 @@ class ProductScreen extends Component {
                                             href="#"
                                             onClick={(event) => this.categoryHandler("Health",event)} 
                                             className="d-flex"><span>Healthcare</span> 
-                                            <span className="text-black ml-auto">(2,124)</span>
+                                            {/* <span className="text-black ml-auto">(2,124)</span> */}
                                             </a>
                                         </li>
                                     </ul>

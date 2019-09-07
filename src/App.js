@@ -63,7 +63,7 @@ class App extends Component {
           <Route exact path="/products" render={(props) => {
             return <ProductScreen {...props} state={this.state}/>
           }} />
-          <Route exact path="/products/:id" render={(props) => {
+          <Route exact path="/products/:productId" render={(props) => {
             return <DetailProduct {...props} state={this.state}/>
           }} />
           <Route exact path="/dashboard" render={(props) => {
