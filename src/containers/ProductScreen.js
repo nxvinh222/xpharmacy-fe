@@ -106,11 +106,7 @@ class ProductScreen extends Component {
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
                 <Footer/>
-=======
-                {/* <Footer/> */}
->>>>>>> 1159b8fb0a5b5d49acda9228f8400380208da59e
             </div>
         );
     }
