@@ -24,7 +24,7 @@ class DetailScreen extends Component {
 
     render() {
         return (
-            <div>
+            <div className='container'>
                 <NavBar/>
                 <div className="mx-auto">
                     <DetailProduct product={this.state.product}/>

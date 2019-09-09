@@ -40,20 +40,21 @@ class DetailProduct extends Component {
         const displayedProduct = this.props.product ? 
         <div className="detail_Product">
             <div className="row">
-                <div className="col-1"></div>
-                <div className="col-4 px-md-5">          
+                {/* <div className="col-1"></div> */}
+                <div className="col-6 px-md-5">          
                     {/* <img className="img-fluid" src={this.props.product.image} style={{width:400,scale:1.5,offset:{vertical:0,horizontal:10}}}/> */}
                     <ImageZoom
                         image={{
                         src: this.props.product.image,
                         className: 'img',
-                        style: {transform: "translateZ(0px)", position: "absolute", left: "125px", height: "391px", width: "391px"}
+                        style: {transform: "translateZ(0px)", left: "125px", height: "391px", width: "391px"}
                         }}
                         zoomImage={{
                         src: this.props.product.image,
                         }}
                     />
                 </div>
+                {/* <div className="col-1"></div> */}
                 <div className="col-6 px-md-5">
                     <h3>{this.props.product.name}</h3>
                     <h2>{this.props.product.price}$</h2>
