@@ -41,7 +41,7 @@ class DetailProduct extends Component {
         <div className="detail_Product">
             <div className="row">
                 {/* <div className="col-1"></div> */}
-                <div className="col-6 px-md-5">          
+                <div className="col lg-6 px-md-12">          
                     {/* <img className="img-fluid" src={this.props.product.image} style={{width:400,scale:1.5,offset:{vertical:0,horizontal:10}}}/> */}
                     <ImageZoom
                         image={{
@@ -55,7 +55,7 @@ class DetailProduct extends Component {
                     />
                 </div>
                 {/* <div className="col-1"></div> */}
-                <div className="col-6 px-md-5">
+                <div className="col lg-6 px-md-5">
                     <h3>{this.props.product.name}</h3>
                     <h2>{this.props.product.price}$</h2>
                     <p>{this.props.product.info}</p>
