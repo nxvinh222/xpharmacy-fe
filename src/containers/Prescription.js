@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
 import PrescriptionImage from '../components/PrescriptionImage';
-import { Pagination } from 'react-bootstrap';
 
 class Order extends Component {
     render() {

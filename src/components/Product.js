@@ -6,7 +6,16 @@ class product extends Component {
     state = {
         field: this.props.field
     }
-    _addToCart = (event) => {
+
+    showModal = () => {
+        this.setState({ show: true });
+      };
+    
+      hideModal = () => {
+        this.setState({ show: false });
+      };
+
+      _addToCart = (event) => {
         var cart;
         if (localStorage.getItem('cart')==null){
                 cart = []

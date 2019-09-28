@@ -28,8 +28,14 @@ class App extends Component {
         password: password
       })
       .then(response => {
-        localStorage.setItem('token', response.data.token)
-        window.location.href='/'
+        if (response.data.success!=false){
+          localStorage.setItem('token', response.data.token)
+          window.location.href='/'
+        }
+        else {
+          alert("Wrong username or password");
+        }
+        
         // console.log(response);     
       })
   }

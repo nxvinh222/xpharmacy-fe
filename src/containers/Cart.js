@@ -4,6 +4,7 @@ import axios from '../axios';
 import { Collapse } from 'react-bootstrap';
 
 import CartItem from '../components/CartItem';
+import Footer from '../components/Footer';
 class Cart extends Component {
 
     state = {
@@ -37,9 +38,13 @@ class Cart extends Component {
             products: JSON.parse(localStorage.getItem('cart')),
             status: "Delivering"
         })
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+            localStorage.removeItem('cart')
+            window.location.href='/'
+        })
         .catch(err => console.log(err));
-        localStorage.removeItem('cart')
+        
     }
 
     componentDidMount(){
@@ -119,6 +124,7 @@ class Cart extends Component {
                         </form>
                     </div>
                 </div>
+                <Footer/>
             </div>
         );
     }
