@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from '../axios';
+import { Table } from 'react-bootstrap';
 
 class Order extends Component {
     state = {
@@ -17,12 +18,38 @@ class Order extends Component {
                 })
                 console.log(this.state.orders);
             })
+            .catch (err => console.log(err));
     }
     render() {
-        
+        const displayedOrders = this.state.orders.map(item => (
+        <>   
+            <tr>
+                <td>{item._id}</td>
+                <td>{item.name}</td>
+                <td>{item.status}</td>
+                <td>{item.date}</td>
+                <td>{item.total}</td>
+            </tr>
+        </>
+        ))
         return (
             <div>
-                
+                <h2>Orders</h2>
+                <Table bordered>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Customer</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {displayedOrders}
+                    </tbody>
+                    
+                </Table>
             </div>
         );
     }

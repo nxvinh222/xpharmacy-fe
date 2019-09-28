@@ -5,6 +5,7 @@ import Add from '../components/Add';
 import Delete from '../components/Delete';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import Order from '../components/Order';
 
 class DashBoard extends Component {
     state = {
@@ -33,6 +34,9 @@ class DashBoard extends Component {
                                 <Nav.Item>
                                 <Nav.Link eventKey="second">Delete Product</Nav.Link>
                                 </Nav.Item>
+                                <Nav.Item>
+                                <Nav.Link eventKey="third">Orders</Nav.Link>
+                                </Nav.Item>
                             </Nav>
                             </Col>
                             <Col sm={9}>
@@ -42,6 +46,9 @@ class DashBoard extends Component {
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second"> 
                                     <Delete onSearchChanged={this.props.onSearchChanged} searchString={this.props.state.searchString} products={this.props.state.products}/>
+                                </Tab.Pane>
+                                <Tab.Pane eventKey="third">
+                                    <Order/>
                                 </Tab.Pane>
                             </Tab.Content>
                             </Col>
