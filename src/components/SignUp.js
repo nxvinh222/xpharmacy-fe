@@ -35,6 +35,7 @@ class SignUpForm extends Component {
             console.log('The form was submitted with the following data:');
             console.log(data);
             alert("Signup success");
+            window.location.href='/login';
           })
           .catch(err => console.log(err))
     }
