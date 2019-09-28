@@ -9,6 +9,7 @@ class NavBar extends Component {
 
     SignOut = (event) => {
         localStorage.removeItem("token")
+        localStorage.removeItem('cart')
         this.state.ProfileName = null
         window.location.href='/'
     }
