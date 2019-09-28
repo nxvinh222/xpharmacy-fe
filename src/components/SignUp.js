@@ -33,7 +33,7 @@ class SignUpForm extends Component {
           })
           .then(data => {
             console.log('The form was submitted with the following data:');
-            console.log(data);
+            console.log(data.data);
             alert("Signup success");
           })
           .catch(err => console.log(err))

@@ -9,7 +9,7 @@ class Login extends Component {
 
     handleChange = (event) => {
         let target = event.target;
-        let value = target.type === 'checkbox' ? target.checked : target.value;
+        let value = target.value;
         let name = target.name;
 
         this.setState({
