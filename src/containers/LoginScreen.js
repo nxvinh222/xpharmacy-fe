@@ -34,7 +34,7 @@ class LoginScreen extends Component {
             <div>
                 <NavBar/>
                <Login _onLogin={this.props._onLogin}/> 
-               {/* <Footer/> */}
+               <Footer/>
             </div>
         );
     }

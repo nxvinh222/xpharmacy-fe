@@ -4,6 +4,7 @@ import { Nav, Row, Tab, Col } from 'react-bootstrap';
 import Add from '../components/Add';
 import Delete from '../components/Delete';
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 class DashBoard extends Component {
     state = {
@@ -58,6 +59,7 @@ class DashBoard extends Component {
                 <div className="Dashboard">
                     {display}
                 </div>
+                <Footer/>
             </div>
         );
     }

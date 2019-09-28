@@ -9,23 +9,25 @@ class NavBar extends Component {
 
     SignOut = (event) => {
         localStorage.removeItem("token")
+        localStorage.removeItem('cart')
         this.state.ProfileName = null
         window.location.href='/'
     }
     componentDidMount(){
-        axios
-        .get("/api/v1/auth/verify", {
-            headers: { token: localStorage.getItem('token')}
-        })
-        .then(data => {
-            // console.log(name)
-            this.setState({
-                ProfileName: data.data.name,
-                admin: data.data.admin
+        if (localStorage.getItem('token')!=null)
+            axios
+            .get("/api/v1/auth/verify", {
+                headers: { token: localStorage.getItem('token')}
             })
-            
-            
-        })         
+            .then(data => {
+                // console.log(name)
+                this.setState({
+                    ProfileName: data.data.name,
+                    admin: data.data.admin
+                })
+                
+                
+            })         
     }
     render() {
             var token = localStorage.getItem('token')
