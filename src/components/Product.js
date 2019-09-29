@@ -113,7 +113,7 @@ class product extends Component {
                     <a href={`/api/v1/products/${this.props.product._id}`}><img src={this.props.product.image} alt="Image placeholder" className="img-fluid"/></a>
                     </figure>
                     <div className="block-4-text p-4">
-                        <h3><a href="shop-single.html">{this.props.product.name}</a></h3>
+                        <h3><a href={`/api/v1/products/${this.props.product._id}`}>{this.props.product.name}</a></h3>
                         <p className="text-primary font-weight-bold">{this.props.product.price}$</p>
                         {func()}
                     </div>
