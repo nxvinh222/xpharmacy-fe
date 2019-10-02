@@ -4,14 +4,15 @@ import { Modal, Button } from 'react-bootstrap';
 
 class product extends Component {
     state = {
-        field: this.props.field
+        field: this.props.field,
+        show: false
     }
 
     showModal = () => {
         this.setState({ show: true });
       };
     
-      hideModal = () => {
+    hideModal = () => {
         this.setState({ show: false });
       };
 
@@ -58,40 +59,6 @@ class product extends Component {
     }
 
     render() {
-        const Delete = () => {
-            const [show, setShow] = useState(false);
-          
-            const handleClose = () => setShow(false);
-            const handleShow = () => setShow(true);
-            const handleDelete = () => {
-                this._deleteProd();
-                setShow(false);
-            }
-          
-            return (
-              <>
-                <Button variant="primary" onClick={handleShow}>
-                  Delete
-                </Button>
-          
-                <Modal show={show} onHide={handleClose}>
-                  <Modal.Header closeButton>
-                    <Modal.Title>Verify</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>Are you sure you wish to delete this item?</Modal.Body>
-                  <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                      No
-                    </Button>
-                    <Button variant="primary" onClick={handleDelete}>
-                      Yes
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
-              </>
-            );
-        }
-        
         const func = () => {
             let button
             if(this.state.field === "product") {
@@ -101,7 +68,28 @@ class product extends Component {
                     </a>
                 )
             } else if(this.state.field === "delete") {
-                button = ( <Delete/> )
+                button = (
+                    <>
+                        <Button variant="primary" onClick={this.showModal}>
+                        Delete
+                        </Button>
+
+                        <Modal show={this.state.show} onHide={this.hideModal}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Verify</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>Are you sure you wish to delete this item?</Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={this.hideModal}>
+                            No
+                            </Button>
+                            <Button variant="primary" onClick={this._deleteProd}>
+                            Yes
+                            </Button>
+                        </Modal.Footer>
+                        </Modal>
+                    </>
+                )
             }
             return button;
         }
