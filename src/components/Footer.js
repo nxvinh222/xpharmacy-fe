@@ -66,8 +66,7 @@ class Footer extends Component {
                         {/* <!-- Footer Elements --> */}
 
                         {/* <!-- Copyright --> */}
-                        <div className="footer-copyright text-center py-3">© 2018 Copyright:
-                            <a href="http://xpharmacyx.herokuapp.com/"> xPharmacy</a>
+                        <div className="footer-copyright text-center py-3"> Made by Xuân Vinh & Đức Nam
                         </div>
                         {/* <!-- Copyright --> */}
 
