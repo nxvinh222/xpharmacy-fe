@@ -4,11 +4,6 @@ http://xpharmacyx.herokuapp.com/
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
-Before you can run the project, you have to cd to its directory and install its pakages first:
-
-### `cd xpharmacy-fe`
-### `npm install`
-
 In the project directory, you can run:
 
 ### `npm start`
